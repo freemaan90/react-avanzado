@@ -1,23 +1,18 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "use": "@vercel/static-build",
-      "src": "package.json"
+  "scope": "fredericozanoni@gmail.com",
+  "functions": {
+    "api/index.js": {
+      "memory": 1024,
+      "maxDuration": 10
     }
-  ],
-  "routes": [
+  },
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
     {
-      "src": "/.*",
-      "dest": "/index.html"
-    },
-    {
-      "src": "(.*).json",
-      "dest": "/$1.json"
-    },
-    {
-      "src": "(.*).js",
-      "dest": "/$1.js"
+      "source": "/",
+      "destination": "/index.html"
     }
   ]
 }
